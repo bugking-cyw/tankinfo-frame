@@ -7,6 +7,85 @@
     <groupId>com.tankinfo</groupId>
     <artifactId>tankinfo-frame</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>tankinfo-basics</module>
+        <module>tankinfo-common</module>
+        <module>tankinfo-service-api</module>
+        <module>tankinfo-service-imp</module>
+    </modules>
+    <packaging>pom</packaging>
+
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.3.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <nacos-discovey.version>2.2.0.RELEASE</nacos-discovey.version>
+        <swagger-boot.version>1.9.1.RELEASE</swagger-boot.version>
+        <boot.dependencies.version>2.2.1.RELEASE</boot.dependencies.version>
+        <cloud.dependencies.version>Hoxton.SR8</cloud.dependencies.version>
+        <alibaba.dependencies.version>2.2.1.RELEASE</alibaba.dependencies.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-nacos-discovery</artifactId>
+            <version>${nacos-discovey.version}</version>
+        </dependency>
+        <!-- swagger-spring-boot -->
+        <dependency>
+            <groupId>com.spring4all</groupId>
+            <artifactId>swagger-spring-boot-starter</artifactId>
+            <version>${swagger-boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${cloud.dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${boot.dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${alibaba.dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+
 
 
 </project>
