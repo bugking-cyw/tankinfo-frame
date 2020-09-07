@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>takinfo-common-utils</artifactId>
+    <artifactId>tankinfo-common-utils</artifactId>
 
 
 </project>

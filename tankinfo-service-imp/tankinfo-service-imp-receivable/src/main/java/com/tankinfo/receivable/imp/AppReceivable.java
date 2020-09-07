@@ -1,21 +1,24 @@
-package com.tankinfo.auth.imp;
+package com.tankinfo.receivable.imp;
 
 import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @Company: TANKINFO 坦克信息
  * @Author: Mr.cyw
  * @Machine: chenyawen
- * @Date: 2020/9/4 6:04 下午
+ * @Date: 2020/9/7 2:37 下午
  * @Description: Please Write notes scientifically
  */
+
 @SpringBootApplication
 @EnableSwagger2Doc
-public class AppAuth {
+@EnableFeignClients
+public class AppReceivable {
 
     public static void main(String[] args) {
-        SpringApplication.run(AppAuth.class);
+        SpringApplication.run(AppReceivable.class);
     }
 }

@@ -12,7 +12,8 @@
     <artifactId>tankinfo-common</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>takinfo-common-utils</module>
+        <module>tankinfo-common-utils</module>
+        <module>tankinfo-common-response</module>
     </modules>
 
 

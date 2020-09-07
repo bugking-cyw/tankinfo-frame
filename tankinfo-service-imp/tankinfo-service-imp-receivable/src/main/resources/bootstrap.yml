@@ -1,0 +1,18 @@
+server:
+  port: 6060
+spring:
+  cloud:
+    nacos:
+      discovery:
+        ##服务的注册
+        server-addr: 127.0.0.1:8848
+        ###  nacos 配置中心
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+  application:
+    name: tankinfo-receivable
+  profiles:
+    active: dev
+
+
