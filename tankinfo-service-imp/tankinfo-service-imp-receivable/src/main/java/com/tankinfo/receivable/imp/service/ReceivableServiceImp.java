@@ -27,7 +27,7 @@ public class ReceivableServiceImp extends BaseApiService implements ReceivableSe
 
     @Override
     public BaseResponse<ReceivableDto> money(String userId) {
-        BaseResponse<UserDto> userResponse = authServiceFeign.userInfo(userId);
+        BaseResponse<UserDto> userResponse = authServiceFeign.userinfo();
         if (!ResConstants.HTTP_RES_CODE_200.equals(userResponse.getCode())){
             return setResultError(userResponse.getCode(), userResponse.getMsg());
         }

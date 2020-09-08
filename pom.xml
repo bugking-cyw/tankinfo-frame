@@ -30,6 +30,7 @@
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
         <swagger-boot.version>1.9.1.RELEASE</swagger-boot.version>
+        <mybatis-plus.version>3.4.0</mybatis-plus.version>
 
     </properties>
 
