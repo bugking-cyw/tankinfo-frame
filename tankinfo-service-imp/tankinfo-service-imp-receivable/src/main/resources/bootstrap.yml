@@ -3,8 +3,6 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-#    schema: classpath:db/schema-h2.sql
-#    data: classpath:db/data-h2.sql
     url: jdbc:mysql://rm-2zexw5l29m445w103mo.mysql.rds.aliyuncs.com:3306/tankinfo-receivable?autoReconnect=false&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
     username: aliyunroot
     password: 1qaz@WSX
@@ -21,6 +19,5 @@ spring:
     name: tankinfo-receivable
   profiles:
     active: dev
-
 
 
