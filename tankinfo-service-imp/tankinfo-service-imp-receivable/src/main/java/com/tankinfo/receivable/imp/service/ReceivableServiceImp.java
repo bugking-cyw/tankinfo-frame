@@ -3,6 +3,7 @@ package com.tankinfo.receivable.imp.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.tankinfo.auth.api.domain.dto.UserDto;
+import com.tankinfo.auth.api.domain.vo.UserVo;
 import com.tankinfo.common.response.base.BaseApiService;
 import com.tankinfo.common.response.base.BaseResponse;
 import com.tankinfo.common.response.constants.ResConstants;
@@ -11,6 +12,8 @@ import com.tankinfo.receivable.api.domain.po.AccountPo;
 import com.tankinfo.receivable.api.service.ReceivableService;
 import com.tankinfo.receivable.imp.feign.AuthServiceFeign;
 import com.tankinfo.receivable.imp.mapper.AccountMapper;
+import io.seata.spring.annotation.GlobalTransactional;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.util.List;
@@ -48,5 +51,26 @@ public class ReceivableServiceImp extends BaseApiService implements ReceivableSe
 
         ReceivableDto receivableDto = new ReceivableDto("pn", "cyw", 100000.0, 30000.0, 70000.0);
         return setResultSuccess(receivableDto);
+    }
+
+    @Override
+    public BaseResponse add(String userId) {
+        authServiceFeign.add(userId);
+        AccountPo accountPo = new AccountPo("6704484066114142208",userId,0 ,0 ,0);
+        accountMapper.updateById(accountPo);
+        return setResultSuccess();
+    }
+
+//    @GlobalTransactional
+    @Transactional
+    @Override
+    public BaseResponse update(String loginName) {
+        BaseResponse temp = authServiceFeign.update(new UserVo(){{setLoginName(loginName);setPassword("000000");}});
+        if(!temp.getCode().equals(ResConstants.HTTP_RES_CODE_200))
+            return setResultError(temp.getMsg());
+        AccountPo accountPo = new AccountPo("6704484066114142208",loginName,1.0 ,1.0 ,1.0);
+        accountMapper.updateById(accountPo);
+        //int a = 10/0;
+        return setResultSuccess();
     }
 }

@@ -32,6 +32,7 @@
         <swagger-boot.version>1.9.1.RELEASE</swagger-boot.version>
         <mybatis-plus.version>3.4.0</mybatis-plus.version>
         <druid-starter.version>1.1.22</druid-starter.version>
+        <knife4j.version>1.9.6</knife4j.version>
     </properties>
 
     <dependencies>
@@ -57,6 +58,13 @@
             <groupId>com.spring4all</groupId>
             <artifactId>swagger-spring-boot-starter</artifactId>
             <version>${swagger-boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <!--在引用时请在maven中央仓库搜索最新版本号-->
+            <version>${knife4j.version}</version>
         </dependency>
 
         <dependency>

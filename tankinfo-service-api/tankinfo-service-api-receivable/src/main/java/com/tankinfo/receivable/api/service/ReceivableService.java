@@ -16,4 +16,16 @@ public interface ReceivableService {
     @ApiImplicitParam(name = "userId", value = "用户ID" ,required = true)
     @PostMapping("/money")
     BaseResponse<ReceivableDto> money(@RequestParam("userId") String userId);
+
+
+    @ApiOperation("新增账号")
+    @ApiImplicitParam(name = "userId", value = "用户ID" ,required = true)
+    @PostMapping("/add")
+    BaseResponse add(@RequestParam("userId") String userId);
+
+
+    @ApiOperation("更新账号")
+    @ApiImplicitParam(name = "loginName", value = "登录账号" ,required = true)
+    @PostMapping("/update")
+    BaseResponse update(@RequestParam("loginName")String loginName);
 }

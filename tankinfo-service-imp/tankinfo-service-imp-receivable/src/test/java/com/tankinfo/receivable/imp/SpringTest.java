@@ -2,7 +2,7 @@ package com.tankinfo.receivable.imp;
 
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.tankinfo.common.utils.SnowflakeIdUtils;
+import com.tankinfo.common.utils.IdUtils;
 import com.tankinfo.receivable.api.domain.po.AccountPo;
 import com.tankinfo.receivable.imp.mapper.AccountMapper;
 import org.junit.Test;
@@ -40,7 +40,7 @@ public class SpringTest {
     @Test
     public void  save(){
         AccountPo accountPo = new AccountPo();
-        accountPo.setAccountId(SnowflakeIdUtils.getSnowflakeId()+"");
+        accountPo.setAccountId(IdUtils.getSnowflakeId()+"");
         accountPo.setUserId("cyw");
         accountPo.setTotal(100000.0);
         accountPo.setPaid(20000.0);

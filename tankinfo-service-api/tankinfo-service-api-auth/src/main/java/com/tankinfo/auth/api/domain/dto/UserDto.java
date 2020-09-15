@@ -1,9 +1,7 @@
 package com.tankinfo.auth.api.domain.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.*;
 
 /**
  * @Company: TANKINFO 坦克信息
@@ -15,13 +13,21 @@ import lombok.Setter;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
+@TableName("user")
 public class UserDto {
 
-    private String name;
+    private String userName;
 
     private String userId;
 
     private Integer age;
 
-    private String position;
+    private String postion;
+
+    private String loginName;
+
+    private String password;
+
+    private boolean finished;
 }

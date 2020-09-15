@@ -9,7 +9,7 @@ import java.util.UUID;
  * @Date: 2020/9/7 4:44 下午
  * @Description: Please Write notes scientifically
  */
-public class SnowflakeIdUtils {
+public class IdUtils {
 
     public static String  uuid(){
         return UUID.randomUUID().toString().replace("-","");
@@ -45,23 +45,23 @@ public class SnowflakeIdUtils {
     private long sequence = 0L;
     /** 上次生成ID的时间截 */
     private long lastTimestamp = -1L;
-    private static SnowflakeIdUtils idWorker;
+    private static IdUtils idWorker;
     /**
      * 以SnowFlake算法，获取唯一有序id
      * @return
      */
     public static long getSnowflakeId() {
         if(idWorker == null) {
-            synchronized (SnowflakeIdUtils.class) {
+            synchronized (IdUtils.class) {
                 if(idWorker == null) {
-                    idWorker = new SnowflakeIdUtils(0, 0);
+                    idWorker = new IdUtils(0, 0);
                 }
             }
         }
         return idWorker.nextId();
     }
     // ==============================Methods==========================================
-    private SnowflakeIdUtils() {
+    private IdUtils() {
     }
     //==============================Constructors=====================================
     /**
@@ -69,7 +69,7 @@ public class SnowflakeIdUtils {
      * @param workerId 工作ID (0~31)
      * @param datacenterId 数据中心ID (0~31)
      */
-    private SnowflakeIdUtils(long workerId, long datacenterId) {
+    private IdUtils(long workerId, long datacenterId) {
         if (workerId > maxWorkerId || workerId < 0) {
             throw new IllegalArgumentException(String.format("worker Id can't be greater than %d or less than 0", maxWorkerId));
         }
