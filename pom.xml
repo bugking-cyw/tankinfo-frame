@@ -33,6 +33,7 @@
         <mybatis-plus.version>3.4.0</mybatis-plus.version>
         <druid-starter.version>1.1.22</druid-starter.version>
         <knife4j.version>1.9.6</knife4j.version>
+        <jwt.version>9.0.1</jwt.version>
     </properties>
 
     <dependencies>
@@ -70,6 +71,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
         </dependency>
 
     </dependencies>
