@@ -66,4 +66,19 @@ public class BaseApiService<T> {
         return dbCount > 0 ? setResultSuccess(successMsg) :
                 setResultError(errorMsg);
     }
+
+
+    /**
+     * 未登录返回结果
+     */
+    public BaseResponse<T> unauthorized(String message) {
+        return setResultError(401,"未授权 登录失败:"+message);
+    }
+
+    /**
+     * 未授权返回结果
+     */
+    public BaseResponse<T> forbidden(String message) {
+        return setResultError(403,"ACL禁止访问资源:"+message);
+    }
 }

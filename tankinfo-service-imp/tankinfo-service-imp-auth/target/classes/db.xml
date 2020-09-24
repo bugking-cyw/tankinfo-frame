@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dbconfig>
+    <dataSource name="default" >
+        <driverClass>com.mysql.cj.jdbc.Driver</driverClass>
+        <url>jdbc:mysql://rm-2zexw5l29m445w103mo.mysql.rds.aliyuncs.com:3306/tankinfo-receivable?autoReconnect=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=false</url>
+        <userName>aliyunroot</userName>
+        <password>1qaz@WSX</password>
+        <initial-size>5</initial-size>
+        <max-active>20</max-active>
+        <min-idle>10</min-idle>
+        <max-wait>60000</max-wait>
+        <validation-query>select 1</validation-query>
+    </dataSource>
+
+    <dataSource name="local" >
+        <driverClass>com.mysql.jdbc.Driver</driverClass>
+        <url>jdbc:mysql://127.0.0.1:3306/fit2cloud?autoReconnect=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=false</url>
+        <userName>root</userName>
+        <password>1qaz@WSX</password>
+        <initial-size>5</initial-size>
+        <max-active>20</max-active>
+        <min-idle>10</min-idle>
+        <max-wait>60000</max-wait>
+        <validation-query>select 1</validation-query>
+    </dataSource>
+
+</dbconfig>

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import javax.annotation.PostConstruct;
@@ -21,6 +22,7 @@ import java.util.stream.Collectors;
  * @Date: 2020/9/23 5:30 下午
  * @Description: Please Write notes scientifically
  */
+@Service
 public class UserServiceImp implements UserService {
 
 

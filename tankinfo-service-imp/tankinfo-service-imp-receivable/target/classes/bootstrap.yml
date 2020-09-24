@@ -1,0 +1,26 @@
+server:
+  port: 6060
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/localtest?autoReconnect=false&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: 1qaz@WSX
+  cloud:
+    nacos:
+      discovery:
+        ##服务的注册
+        server-addr: 127.0.0.1:8848
+        ###  nacos 配置中心
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+    #alibaba:
+      #seata:
+        #tx-service-group: sca-customer-seata-tx-service-group
+  application:
+    name: tankinfo-receivable
+  profiles:
+    active: dev
+
+

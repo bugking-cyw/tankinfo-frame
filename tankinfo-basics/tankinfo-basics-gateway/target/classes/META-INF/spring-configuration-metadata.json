@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "secure.ignore",
+      "type": "com.tankinfo.security.config.IgnoreUrlsConfig",
+      "sourceType": "com.tankinfo.security.config.IgnoreUrlsConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "secure.ignore.urls",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.tankinfo.security.config.IgnoreUrlsConfig"
+    }
+  ],
+  "hints": []
+}
