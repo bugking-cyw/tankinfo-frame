@@ -13,3 +13,5 @@ spring:
     name: tankinfo-gateway
   profiles:
     active: dev
+knife4j:
+  production: false

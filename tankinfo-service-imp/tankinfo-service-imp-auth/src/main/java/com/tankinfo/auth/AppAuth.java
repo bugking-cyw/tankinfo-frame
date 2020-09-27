@@ -1,9 +1,7 @@
-package com.tankinfo.auth.imp;
+package com.tankinfo.auth;
 
-import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @Company: TANKINFO 坦克信息
@@ -13,8 +11,6 @@ import org.springframework.context.annotation.ComponentScan;
  * @Description: Please Write notes scientifically
  */
 @SpringBootApplication
-@EnableSwagger2Doc
-/*@ComponentScan("com.tankinfo.*")*/
 public class AppAuth {
 
     public static void main(String[] args) {
