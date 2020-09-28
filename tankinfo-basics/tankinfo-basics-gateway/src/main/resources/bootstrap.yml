@@ -10,8 +10,24 @@ spring:
         server-addr: 127.0.0.1:8848
         file-extension: yaml
   application:
-    name: tankinfo-gateway
+    name: tankinfo-basic-gateway
   profiles:
     active: dev
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:5050/rsa/publicKey
+  redis:
+    database: 0
+    port: 6379
+    host: localhost
+    password: 1qaz@WSX
 knife4j:
   production: false
+
+secure:
+  ignore:
+    urls: #配置白名单路径
+      - "/actuator/**"
+      - "/tankinfo-basic-auth/oauth/token"

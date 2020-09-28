@@ -28,4 +28,9 @@ public interface ReceivableService {
     @ApiImplicitParam(name = "loginName", value = "登录账号" ,required = true)
     @PostMapping("/update")
     BaseResponse update(@RequestParam("loginName")String loginName);
+
+    @ApiOperation("测试权限")
+    @ApiImplicitParam(name = "loginName", value = "登录账号" ,required = true)
+    @PostMapping("/test")
+    BaseResponse test(@RequestParam("loginName")String loginName);
 }

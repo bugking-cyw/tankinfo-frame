@@ -73,4 +73,9 @@ public class ReceivableServiceImp extends BaseApiService implements ReceivableSe
         //int a = 10/0;
         return setResultSuccess();
     }
+
+    @Override
+    public BaseResponse test(String loginName) {
+        return setResultSuccess("hello world");
+    }
 }
