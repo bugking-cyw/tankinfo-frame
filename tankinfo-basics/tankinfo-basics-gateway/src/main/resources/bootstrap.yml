@@ -31,3 +31,12 @@ secure:
     urls: #配置白名单路径
       - "/actuator/**"
       - "/tankinfo-basic-auth/oauth/token"
+      - "/doc.html"
+      - "/api-docs-ext"
+      - "/swagger-resources"
+      - "/api-docs"
+      - "/swagger-ui.html"
+      - "/swagger-resources/configuration/ui"
+      - "/swagger-resources/configuration/security"
+      - "/webjars/**"
+      - "/tankinfo-receivable/v2/api-docs"
