@@ -12,7 +12,7 @@ import com.tankinfo.receivable.api.domain.po.AccountPo;
 import com.tankinfo.receivable.api.service.ReceivableService;
 import com.tankinfo.receivable.imp.feign.AuthServiceFeign;
 import com.tankinfo.receivable.imp.mapper.AccountMapper;
-import io.seata.spring.annotation.GlobalTransactional;
+
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;

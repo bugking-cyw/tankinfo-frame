@@ -17,9 +17,13 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
+import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.rsa.crypto.KeyStoreKeyFactory;
 
+import javax.annotation.Resource;
+import javax.sql.DataSource;
 import java.security.KeyPair;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,15 +45,26 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
     private final AuthenticationManager authenticationManager;
     private final JwtTokenEnhancer jwtTokenEnhancer;
 
+
+    @Resource
+    private DataSource dataSource;
+
+    @Bean
+    public TokenStore tokenStore(){
+        //String pw = passwordEncoder.encode("123456");
+        return new JdbcTokenStore(dataSource);
+    }
+
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.inMemory()
+        /*clients.inMemory()
                 .withClient("client-app")
                 .secret(passwordEncoder.encode("123456"))
                 .scopes("all")
                 .authorizedGrantTypes("password", "refresh_token")
                 .accessTokenValiditySeconds(3600)
-                .refreshTokenValiditySeconds(86400);
+                .refreshTokenValiditySeconds(86400);*/
+        clients.jdbc(dataSource);
     }
 
     @Override
@@ -59,10 +74,11 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
         delegates.add(jwtTokenEnhancer);
         delegates.add(accessTokenConverter());
         enhancerChain.setTokenEnhancers(delegates); //配置JWT的内容增强器
-        endpoints.authenticationManager(authenticationManager)
+        endpoints.tokenStore(tokenStore()).authenticationManager(authenticationManager)
                 .userDetailsService(userDetailsService) //配置加载用户信息的服务
                 .accessTokenConverter(accessTokenConverter())
                 .tokenEnhancer(enhancerChain);
+
     }
 
     @Override
