@@ -21,5 +21,11 @@ spring:
     active: dev
   main:
     allow-bean-definition-overriding: true
+feign:
+  client:
+    config:
+      tankinfo-basic-auth:
+        readTimeout: 5000
+        connectTimeout: 5000
 
 

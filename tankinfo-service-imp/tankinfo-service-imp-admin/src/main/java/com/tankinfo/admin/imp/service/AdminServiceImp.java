@@ -38,14 +38,14 @@ public class AdminServiceImp extends BaseApiService implements AdminService {
 
     @Override
     public BaseResponse login(LoginReguestDto loginReguestDto) throws Exception{
-        String username = loginReguestDto.getLoginName();
+        String username = loginReguestDto.getUsername();
         String password = loginReguestDto.getPassword();
         if(StringUtils.isEmpty(username)||StringUtils.isEmpty(password)){
             throw new RuntimeException("用户密码不能为空");
         }
         Map<String, String> params = new HashMap<>();
         params.put("client_id", AuthConstant.SYSTEM_CLIENT_ID);
-        params.put("client_secret","123456");
+        params.put("client_secret",AuthConstant.SYSTEM_CLIENT_SECRET);
         params.put("grant_type","password");
         params.put("username",username);
         params.put("password",password);

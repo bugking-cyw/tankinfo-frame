@@ -55,4 +55,6 @@ public interface AuthConstant {
 
 
     String SYSTEM_CLIENT_ID = "tankinfo";
+
+    String SYSTEM_CLIENT_SECRET = "tankinfo_1qaz@WSX";
 }
