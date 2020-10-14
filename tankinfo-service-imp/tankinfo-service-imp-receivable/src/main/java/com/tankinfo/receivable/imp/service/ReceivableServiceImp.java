@@ -2,15 +2,13 @@ package com.tankinfo.receivable.imp.service;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.tankinfo.auth.api.domain.dto.UserDto;
-import com.tankinfo.auth.api.domain.vo.UserVo;
+import com.tankinfo.admin.api.domain.vo.UserVo;
 import com.tankinfo.common.response.base.BaseApiService;
 import com.tankinfo.common.response.base.BaseResponse;
 import com.tankinfo.common.response.constants.ResConstants;
 import com.tankinfo.receivable.api.domain.dto.ReceivableDto;
 import com.tankinfo.receivable.api.domain.po.AccountPo;
 import com.tankinfo.receivable.api.service.ReceivableService;
-import com.tankinfo.receivable.imp.feign.AuthServiceFeign;
 import com.tankinfo.receivable.imp.mapper.AccountMapper;
 
 import org.springframework.transaction.annotation.Transactional;

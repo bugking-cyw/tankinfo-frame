@@ -12,7 +12,7 @@
     <artifactId>tankinfo-service-imp</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>tankinfo-service-imp-auth</module>
+        <module>tankinfo-service-imp-admin</module>
         <module>tankinfo-service-imp-receivable</module>
     </modules>
 

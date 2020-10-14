@@ -30,6 +30,7 @@ secure:
   ignore:
     urls: #配置白名单路径
       - "/actuator/**"
+      - "/tankinfo-admin/admin/login"
       - "/tankinfo-basic-auth/oauth/token"
       - "/doc.html"
       - "/api-docs-ext"
@@ -40,3 +41,4 @@ secure:
       - "/swagger-resources/configuration/security"
       - "/webjars/**"
       - "/tankinfo-receivable/v2/api-docs"
+      - "/tankinfo-admin/v2/api-docs"
