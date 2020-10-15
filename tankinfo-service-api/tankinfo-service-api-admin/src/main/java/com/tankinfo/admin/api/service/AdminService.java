@@ -33,4 +33,13 @@ public interface AdminService {
     @ApiOperation("名称加载用户")
     @PostMapping("/loadUserByName")
     UserDto loadUserByName(@RequestParam String userName);
+
+
+    @ApiOperation("当前用户信息")
+    @PostMapping("/currentUser")
+    BaseResponse currentUser();
+
+    @ApiOperation("登出")
+    @PostMapping("/logout")
+    BaseResponse logout();
 }

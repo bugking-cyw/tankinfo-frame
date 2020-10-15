@@ -65,4 +65,22 @@ public class AdminServiceImp extends BaseApiService implements AdminService {
         userDto.setRoles(rolePos.stream().map(RolePo::getRoleCode).collect(Collectors.toList()));
         return userDto;
     }
+
+    @Override
+    public BaseResponse currentUser() {
+        Map<String, Object> result = new HashMap<>();
+        UserDto userDto = adminManager.userByRequest();
+        List<RolePo> rolePos = adminManager.rolesByName(new UserPo() {{
+            setUserId(userDto.getId());
+        }});
+        result.put("user", userDto);
+        result.put("roles", rolePos);
+        return setResultSuccess(result);
+    }
+
+    @Override
+    public BaseResponse logout() {
+        //BaseResponse response = authServiceFeign.removeToken();
+        return setResultSuccess();
+    }
 }

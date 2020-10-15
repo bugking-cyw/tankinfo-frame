@@ -8,6 +8,7 @@ spring:
           '[/**]':
             # 返回的资源共享给请求来源
             allowed-origins:
+              - "http://localhost:9528"
               - "*"
             # 比如cookie, authorization之类的认证信息
             allow-credentials: true
@@ -56,3 +57,4 @@ secure:
       - "/webjars/**"
       - "/tankinfo-receivable/v2/api-docs"
       - "/tankinfo-admin/v2/api-docs"
+#      - "/tankinfo-admin/admin/currentUser"

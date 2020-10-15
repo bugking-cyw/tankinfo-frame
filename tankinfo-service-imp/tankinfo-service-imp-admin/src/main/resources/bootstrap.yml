@@ -25,7 +25,7 @@ feign:
   client:
     config:
       tankinfo-basic-auth:
-        readTimeout: 5000
-        connectTimeout: 5000
+        readTimeout: 10000
+        connectTimeout: 10000
 
 

@@ -25,6 +25,10 @@ public class ResourceService {
     public void loadResource(){
         Map<String, List<String>> resourceRolesMap = new TreeMap<>();
         resourceRolesMap.put("/tankinfo-receivable/test", new ArrayList<String>(){{add("ADMIN");}});
+
+        resourceRolesMap.put("/tankinfo-admin/admin/currentUser", new ArrayList<String>(){{add("ADMIN");add("role_test");}});
+        resourceRolesMap.put("/tankinfo-admin/admin/logout", new ArrayList<String>(){{add("ADMIN");add("role_test");}});
+        //resourceRolesMap.put("/tankinfo-basic-auth/removeToken", new ArrayList<String>(){{add("ADMIN");add("role_test");}});
         redisTemplate.opsForHash().putAll(RedisConstant.RESOURCE_ROLES_MAP, resourceRolesMap);
     }
 }
