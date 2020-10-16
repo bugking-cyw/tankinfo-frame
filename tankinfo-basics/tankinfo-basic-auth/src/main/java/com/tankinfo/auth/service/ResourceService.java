@@ -1,13 +1,18 @@
 package com.tankinfo.auth.service;
 
+import com.tankinfo.auth.domain.ResourceEntity;
+import com.tankinfo.auth.mapper.ResourceEntityMapper;
 import com.tankinfo.common.constant.RedisConstant;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
+
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 /**
  * @Company: TANKINFO 坦克信息
@@ -22,13 +27,19 @@ public class ResourceService {
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
 
-    public void loadResource(){
-        Map<String, List<String>> resourceRolesMap = new TreeMap<>();
-        resourceRolesMap.put("/tankinfo-receivable/test", new ArrayList<String>(){{add("ADMIN");}});
+    @Resource
+    private ResourceEntityMapper resourceEntityMapper;
 
-        resourceRolesMap.put("/tankinfo-admin/admin/currentUser", new ArrayList<String>(){{add("ADMIN");add("role_test");}});
-        resourceRolesMap.put("/tankinfo-admin/admin/logout", new ArrayList<String>(){{add("ADMIN");add("role_test");}});
-        //resourceRolesMap.put("/tankinfo-basic-auth/removeToken", new ArrayList<String>(){{add("ADMIN");add("role_test");}});
+    public void loadResource(){
+
+        Map<String, List<String>> resourceRolesMap = new TreeMap<>();
+        List<ResourceEntity> resourceEntities = resourceEntityMapper.resourceEnties();
+        resourceRolesMap = resourceEntities.stream().collect(Collectors.toMap(ResourceEntity::getUrl,entity -> {
+            String role_codes = entity.getRoleCodes();
+            return CollectionUtils.arrayToList(role_codes.split(","));
+        }));
         redisTemplate.opsForHash().putAll(RedisConstant.RESOURCE_ROLES_MAP, resourceRolesMap);
     }
+
+
 }
