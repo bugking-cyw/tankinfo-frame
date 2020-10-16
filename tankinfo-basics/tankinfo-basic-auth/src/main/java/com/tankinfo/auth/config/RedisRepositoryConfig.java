@@ -1,4 +1,4 @@
-package com.tankinfo.admin.config;
+package com.tankinfo.auth.config;
 
 
 import org.springframework.context.annotation.Bean;

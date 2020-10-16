@@ -1,7 +1,7 @@
-package com.tankinfo.admin.service;
+package com.tankinfo.auth.service;
 
-import com.tankinfo.admin.domain.SecurityUser;
-import com.tankinfo.admin.feign.AdminServiceFeign;
+import com.tankinfo.auth.domain.SecurityUser;
+import com.tankinfo.auth.feign.AdminServiceFeign;
 import com.tankinfo.common.constant.MessageConstant;
 import com.tankinfo.system.auth.UserDto;
 import org.springframework.security.authentication.AccountExpiredException;

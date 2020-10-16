@@ -1,4 +1,4 @@
-package com.tankinfo.admin.config;
+package com.tankinfo.auth.config;
 
 import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
 import org.springframework.context.annotation.Bean;

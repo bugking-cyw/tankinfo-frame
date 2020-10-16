@@ -1,4 +1,4 @@
-package com.tankinfo.admin.controller;
+package com.tankinfo.auth.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 

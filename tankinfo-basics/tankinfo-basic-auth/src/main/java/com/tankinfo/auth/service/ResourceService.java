@@ -1,4 +1,4 @@
-package com.tankinfo.admin.service;
+package com.tankinfo.auth.service;
 
 import com.tankinfo.common.constant.RedisConstant;
 import org.springframework.data.redis.core.RedisTemplate;

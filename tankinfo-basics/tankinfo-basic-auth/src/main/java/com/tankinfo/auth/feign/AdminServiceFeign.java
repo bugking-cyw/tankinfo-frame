@@ -1,4 +1,4 @@
-package com.tankinfo.admin.feign;
+package com.tankinfo.auth.feign;
 
 import com.tankinfo.common.response.base.BaseResponse;
 import com.tankinfo.system.auth.UserDto;

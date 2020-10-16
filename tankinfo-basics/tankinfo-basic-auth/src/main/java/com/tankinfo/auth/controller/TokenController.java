@@ -1,19 +1,15 @@
-package com.tankinfo.admin.controller;
+package com.tankinfo.auth.controller;
 
-import com.tankinfo.admin.domain.Oauth2TokenDTO;
-import com.tankinfo.common.constant.AuthConstant;
+import com.tankinfo.auth.domain.Oauth2TokenDTO;
 import com.tankinfo.common.response.base.BaseApiService;
 import com.tankinfo.common.response.base.BaseResponse;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.endpoint.TokenEndpoint;
-import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 import java.util.Map;
-import java.util.Optional;
 
 /**
  * @Company: TANKINFO 坦克信息

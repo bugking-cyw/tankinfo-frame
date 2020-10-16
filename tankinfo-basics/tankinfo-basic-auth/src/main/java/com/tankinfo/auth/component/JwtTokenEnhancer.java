@@ -1,8 +1,8 @@
-package com.tankinfo.admin.component;
+package com.tankinfo.auth.component;
 
 
 
-import com.tankinfo.admin.domain.SecurityUser;
+import com.tankinfo.auth.domain.SecurityUser;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;

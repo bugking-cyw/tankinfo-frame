@@ -1,6 +1,6 @@
-package com.tankinfo.admin.init;
+package com.tankinfo.auth.init;
 
-import com.tankinfo.admin.service.ResourceService;
+import com.tankinfo.auth.service.ResourceService;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;

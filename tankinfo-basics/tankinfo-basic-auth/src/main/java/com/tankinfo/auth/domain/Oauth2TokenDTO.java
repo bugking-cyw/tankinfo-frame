@@ -1,4 +1,4 @@
-package com.tankinfo.admin.domain;
+package com.tankinfo.auth.domain;
 
 import lombok.Builder;
 import lombok.Data;

@@ -1,9 +1,9 @@
-package com.tankinfo.admin.config;
+package com.tankinfo.auth.config;
 
 
 
-import com.tankinfo.admin.component.JwtTokenEnhancer;
-import com.tankinfo.admin.service.UserServiceImpl;
+import com.tankinfo.auth.component.JwtTokenEnhancer;
+import com.tankinfo.auth.service.UserServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
