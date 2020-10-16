@@ -2,21 +2,7 @@ server:
   port: 80
 spring:
   cloud:
-    gateway:
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            # 返回的资源共享给请求来源
-            allowed-origins:
-              - "http://localhost:9528"
-              - "*"
-            # 比如cookie, authorization之类的认证信息
-            allow-credentials: true
-            allowed-headers: "*"
-            allowed-methods: "*"
-            expose-headers: "*"
-            # 表示Options可以在浏览器缓存多长时间
-            max-age: 600
+
     nacos:
       discovery:
         ##服务的注册
@@ -57,4 +43,5 @@ secure:
       - "/webjars/**"
       - "/tankinfo-receivable/v2/api-docs"
       - "/tankinfo-admin/v2/api-docs"
-#      - "/tankinfo-admin/admin/currentUser"
+
+

@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.SecurityWebFiltersOrder;
@@ -50,6 +51,7 @@ public class ResourceServerConfig {
 
         http.authorizeExchange()
                 .pathMatchers(urls.toArray(new String[urls.size()])).permitAll()//白名单配置
+                .pathMatchers(HttpMethod.OPTIONS, "/**").permitAll()//设置所有OPTIONS请求为白名单
                 .anyExchange().access(authorizationManager)//鉴权管理器配置
                 .and().exceptionHandling()
                 .accessDeniedHandler(restfulAccessDeniedHandler)//处理未授权
